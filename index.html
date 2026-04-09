@@ -2,17 +2,64 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-    <link rel="stylesheet" href="CSS/style.css">
-   
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/reset.css">
+  <link rel="stylesheet" href="CSS/rodape.css">
+  <script src="JavaScript\script.js" defer></script>
 </head>
 
 <body>
-
-        
+  <!-- main = conteúdo principal da página -->
+  <main>
+    <section id="tabela">
+      <table class="tabela">
+        <!-- linha dos cabeçalhos -->
+        <tr>
+          <td>
+            <div id="containerDicaRaca">
+              <div id="dicaRaca"><span></span></div>
+            </div>
+          </td>
+          <th class="thHabilidades">Valor</th>
+          <th class="thHabilidades">D20</th>
+          <th class="thModificadores">MOD</th>
+          <th class="thTotal">Total</th>
+        </tr>
+        <tr>
+          <th>
+            <span class="thMaior">FOR</span>
+            <span class="thMenor">Força</span>
+          </th>
+          <td><input type="text" id="valorForca" class="campoTabela"></td>
+          <td><input type="text" id="d20Forca" class="campoTabela" disabled></td>
+          <td><input type="text" id="modForca" class="campoTabela" disabled></td>
+          <td><input type="text" id="totalForca" class="campoTabela forca total" disabled></td>
+        </tr>
+        <tr>
+          <th>
+            <span class="thMaior">DES</span>
+            <span class="thMenor">Destreza</span>
+          </th>
+          <td><input type="text" id="valorDestreza" class="campoTabela"></td>
+          <td><input type="text" id="d20Destreza" class="campoTabela" disabled></td>
+          <td><input type="text" id="modDestreza" class="campoTabela" disabled></td>
+          <td><input type="text" id="totalDestreza" class="campoTabela destreza total" disabled></td>
+        </tr>
+        <!-- outras linhas com os elementos faltantes -->
+      </table>
+    </section>
+    <section id="botoes">
+      <div>
+        <input class="calcular" type="button" value="Calcular" id="calcular">
+        <input class="calcular" type="button" value="Rolar dados" id="dado">
+        <input class="resetar" type="button" value="Resetar" id="resetar">
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>
