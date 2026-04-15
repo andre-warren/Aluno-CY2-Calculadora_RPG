@@ -1,116 +1,51 @@
-//#region Atributos
-// Elementos de atributos
-let forca = document.getElementById("forBase");
-let destreza = document.getElementById("desBase");
-let constituicao = document.getElementById("conBase");
-let inteligencia = document.getElementById("intBase");
-let sabedoria = document.getElementById("sabBase");
-let carisma = document.getElementById("carBase");
-//#endregion
+// Valores dos atributos
+let valorForca = document.getElementById("valorForca");
+let valorDestreza = document.getElementById("valorDestreza");
+// ... outras variáveis para os valores de atributos
 
-//#region D20 
-// Elemento números aleatórios após rodar o D20
-let forD20 = document.getElementById("forD20");
-let desD20 = document.getElementById("desD20");
-let conD20 = document.getElementById("conD20");
-let intD20 = document.getElementById("intD20");
-let sabD20 = document.getElementById("sabD20");
-let carD20 = document.getElementById("carD20");
-//#endregion
+// Dado de 20 lados
+let d20Forca = document.getElementById("d20Forca");
+let d20Destreza = document.getElementById("d20Destreza");
+// ... outras variáveis para os dados de 20 lados
 
-//#region Modificadores
-// Marcadores de modificadores
-let forMod = document.getElementById("forMod");
-let desMod = document.getElementById("desMod");
-let conMod = document.getElementById("conMod");
-let intMod = document.getElementById("intMod");
-let sabMod = document.getElementById("sabMod");
-let carMod = document.getElementById("carMod");
-//#endregion
+// MOD dos de cada atributo
+let modForca = document.getElementById("modForca");
+let modDestreza = document.getElementById("modDestreza");
+// ... outras variáveis para os MODs dos atributos
 
-//#region Total Elemento
-// Elementos Total da soma
-let totalForca = document.getElementById('forTotal');
-let totalDestreza = document.getElementById('desTotal');
-let totalConstituicao = document.getElementById('conTotal');
-let totalInteligencia = document.getElementById('intTotal');
-let totalSabedoria = document.getElementById('sabTotal');
-let totalCarisma = document.getElementById('carTotal');
-//#endregion
+// Totais dos atributos
+let totalForca = document.getElementById("totalForca");
+let totalDestreza = document.getElementById("totalDestreza");
+// ... outras variáveis para os totais dos atributos
 
-//#region Botões
-//-Botões da página
+// Eventos de click dos botões
+let botaoCalcular = document.getElementById("calcular");
 let botaoDado = document.getElementById("dado");
-let calcularBotao = document.getElementById("calcular");
-let resetarBotao = document.getElementById("resetar");
-//#endregion
+let botaoResetar = document.getElementById("resetar");
 
-//#region Eventos
-calcularBotao.addEventListener('click', calcular);
-resetarBotao.addEventListener('click', recarregarPagina);
-botaoDado.addEventListener('click', camposD20);
-//#endregion
+botaoCalcular.addEventListener("click", calcular);
+botaoDado.addEventListener("click", rolarDados);
 
+// funções dos botões
+function rolarDados() {
+    // variável local para armazenar os números aleatórios gerados na função para os dados de cada atributo
+    let numerosD20 = numerosAleatorios();
 
-function gerarNumeroAleatorio()
-{
-    let array_numeros_aleatorios = [];
+    d20Forca.value = numerosD20[0];
+    d20Destreza.value = numerosD20[1];
+    // ... atribuir os valores dos dados para os outros atributos
+}
 
+// função para gerar números aleatórios entre 1 e 20 para os dados de cada atributo
+function numerosAleatorios() {
+    let numerosAleatorios = []; // array para armazenar os números aleatórios
+
+    // Gerar 6 números aleatórios entre 1 e 20: o "i" representa o índice do array, que vai de 0 a 5 (total de 6 atributos)
     for (let i = 0; i < 6; i++) {
-        array_numeros_aleatorios[i] = Math.floor(20 * Math.random() + 1);
+        // Math.random() gera um número decimal aleatório entre 0 (inclusive) e 1 (exclusive). Multiplicando por 20, obtemos um número entre 0 (inclusive) e 20 (exclusive).
+        numerosAleatorios[i] = Math.floor(Math.random() * 20) + 1;
+        // A função Math.floor() arredonda o número para baixo, garantindo que obtenhamos um número inteiro entre 1 e 20.
     }
-    return array_numeros_aleatorios;
-}
-
-function camposD20()
-{
-    numeros_d20 = gerarNumeroAleatorio();
-    
-    forD20.value = numeros_d20[0];
-    desD20.value = numeros_d20[1];
-    conD20.value = numeros_d20[2];
-    intD20.value = numeros_d20[3];
-    sabD20.value = numeros_d20[4];
-    carD20.value = numeros_d20[5];
-    
-    modificador(numeros_d20);
-}
-
-function modificador(numeros_aleatorios)
-{
-    numeros_d20 = numeros_aleatorios;
-    let mod = []
-
-    for (let i = 0; i < 6; i++)
-    {
-        valor = numeros_d20[i];
-        if (valor > 15) {
-            mod[i] = Math.round(1 + (valor / 1.2));
-        } else if (valor > 7) {
-            mod[i] = (0 + (valor / 1.2)).toFixed(0);
-        } else {
-            mod[i] = Math.round(-1 + (valor / 0.8));
-        }
-    }
-    forMod.value = mod[0];
-    desMod.value = mod[1];
-    conMod.value = mod[2];
-    intMod.value = mod[3];
-    sabMod.value = mod[4];
-    carMod.value = mod[5];
-}
-
-function calcular()
-{
-    totalForca.value = Number(forca.value) + Number(forMod.value);
-    totalDestreza.value = Number(destreza.value) + Number(desMod.value);
-    totalConstituicao.value = Number(constituicao.value) + Number(conMod.value);
-    totalInteligencia.value = Number(inteligencia.value) + Number(intMod.value);
-    totalSabedoria.value = Number(sabedoria.value) + Number(sabMod.value);
-    totalCarisma.value = Number(carisma.value) + Number(carMod.value);
-}
-
-function recarregarPagina()
-{
-    window.location.reload(true);
+    // retorna o array com os números aleatórios gerados para os dados de cada atributo
+    return numerosAleatorios;
 }
