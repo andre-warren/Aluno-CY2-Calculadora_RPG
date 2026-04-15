@@ -1,12 +1,18 @@
 // Valores dos atributos
 let valorForca = document.getElementById("valorForca");
 let valorDestreza = document.getElementById("valorDestreza");
-// ... outras variáveis para os valores de atributos
+let valorConstituicao = document.getElementById("valorConstituicao");
+let valorInteligencia = document.getElementById("valorInteligencia");
+let valorSabedoria = document.getElementById("valorSabedoria");
+let valorCarisma = document.getElementById("valorCarisma");
 
 // Dado de 20 lados
 let d20Forca = document.getElementById("d20Forca");
 let d20Destreza = document.getElementById("d20Destreza");
-// ... outras variáveis para os dados de 20 lados
+let d20Constituicao = document.getElementById("d20Constituicao");
+let d20Inteligencia = document.getElementById("d20Inteligencia");
+let d20Sabedoria = document.getElementById("d20Sabedoria");
+let d20Carisma = document.getElementById("d20Carisma");
 
 // MOD dos de cada atributo
 let modForca = document.getElementById("modForca");

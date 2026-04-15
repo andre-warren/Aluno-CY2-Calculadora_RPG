@@ -16,10 +16,10 @@
 
     <section id="tabela">
       <table class="tabela">
-        <tr>
+        <tr> <!-- table row -->
           <td>
             <div id="containerDicaRaca">
-              <div id="dicaRaca"><span></span></div>
+              <div id="celulaVazia"><span></span></div>
             </div>
           </td>
           <th class="thHabilidades">Valor</th>
@@ -32,60 +32,60 @@
             <span class="thMaior">FOR</span>
             <span class="thMenor">Força</span>
           </th>
-          <td><input type="text" id="forBase" class="campoTabela for base"></td>
-          <td><input type="text" id="forD20" class="campoTabela for d20" disabled></td>
-          <td><input type="text" id="forMod" class="campoTabela for mod" disabled></td>
-          <td><input type="text" id="forTotal" class="campoTabela for total" disabled></td>
+          <td><input type="number" id="valorForca" class="campoTabela for base"></td>
+          <td><input type="number" id="d20forca" class="campoTabela for d20" disabled></td>
+          <td><input type="number" id="modForca" class="campoTabela for mod" disabled></td>
+          <td><input type="number" id="totalForca" class="campoTabela for total" disabled></td>
         </tr>
         <tr>
           <th>
             <span class="thMaior">DES</span>
             <span class="thMenor">Destreza</span>
           </th>
-          <td><input type="text" id="desBase" class="campoTabela des base"></td>
-          <td><input type="text" id="desD20" class="campoTabela des d20" disabled></td>
-          <td><input type="text" id="desMod" class="campoTabela des mod" disabled></td>
-          <td><input type="text" id="desTotal" class="campoTabela des total" disabled></td>
+          <td><input type="number" id="valorDestreza" class="campoTabela des base"></td>
+          <td><input type="number" id="d20Destreza" class="campoTabela des d20" disabled></td>
+          <td><input type="number" id="modDestreza" class="campoTabela des mod" disabled></td>
+          <td><input type="number" id="totalDestreza" class="campoTabela des total" disabled></td>
         </tr>
         <tr>
           <th>
             <span class="thMaior">CON</span>
             <span class="thMenor">Constituição</span>
           </th>
-          <td><input type="text" id="conBase" class="campoTabela con base"></td>
-          <td><input type="text" id="conD20" class="campoTabela con d20" disabled></td>
-          <td><input type="text" id="conMod" class="campoTabela con mod" disabled></td>
-          <td><input type="text" id="conTotal" class="campoTabela con total" disabled></td>
+          <td><input type="number" id="valorConstituicao" class="campoTabela con base"></td>
+          <td><input type="number" id="d20Constituicao" class="campoTabela con d20" disabled></td>
+          <td><input type="number" id="modConstituicao" class="campoTabela con mod" disabled></td>
+          <td><input type="number" id="totalConstituicao" class="campoTabela con total" disabled></td>
         </tr>
         <tr>
           <th>
             <span class="thMaior">INT</span>
             <span class="thMenor">Inteligência</span>
           </th>
-          <td><input type="text" id="intBase" class="campoTabela int base"></td>
-          <td><input type="text" id="intD20" class="campoTabela int d20" disabled></td>
-          <td><input type="text" id="intMod" class="campoTabela int mod" disabled></td>
-          <td><input type="text" id="intTotal" class="campoTabela int total" disabled></td>
+          <td><input type="number" id="valorInteligencia" class="campoTabela int base"></td>
+          <td><input type="number" id="d20Inteligencia" class="campoTabela int d20" disabled></td>
+          <td><input type="number" id="modInteligencia" class="campoTabela int mod" disabled></td>
+          <td><input type="number" id="totalInteligencia" class="campoTabela int total" disabled></td>
         </tr>
         <tr>
           <th>
             <span class="thMaior">SAB</span>
             <span class="thMenor">Sabedoria</span>
           </th>
-          <td><input type="text" id="sabBase" class="campoTabela sab base"></td>
-          <td><input type="text" id="sabD20" class="campoTabela sab d20" disabled></td>
-          <td><input type="text" id="sabMod" class="campoTabela sab mod" disabled></td>
-          <td><input type="text" id="sabTotal" class="campoTabela sab total" disabled></td>
+          <td><input type="number" id="valorSabedoria" class="campoTabela sab base"></td>
+          <td><input type="number" id="d20Sabedoria" class="campoTabela sab d20" disabled></td>
+          <td><input type="number" id="modSabedoria" class="campoTabela sab mod" disabled></td>
+          <td><input type="number" id="totalSabedoria" class="campoTabela sab total" disabled></td>
         </tr>
         <tr>
           <th>
             <span class="thMaior">CAR</span>
             <span class="thMenor">Carisma</span>
           </th>
-          <td><input type="text" id="carBase" class="campoTabela car base"></td>
-          <td><input type="text" id="carD20" class="campoTabela car d20" disabled></td>
-          <td><input type="text" id="carMod" class="campoTabela car mod" disabled></td>
-          <td><input type="text" id="carTotal" class="campoTabela car total" disabled></td>
+          <td><input type="number" id="valorCarisma" class="campoTabela car base"></td>
+          <td><input type="number" id="d20Carisma" class="campoTabela car d20" disabled></td>
+          <td><input type="number" id="modCarisma" class="campoTabela car mod" disabled></td>
+          <td><input type="number" id="totalCarisma" class="campoTabela car total" disabled></td>
         </tr>
       </table>
     </section>
@@ -97,10 +97,10 @@
       </div>
     </section>
   </main>
-  <footer>
+  <!-- <footer>
     <div class="caixaFooter">Desenvolvido por <a href="" target="_blank">Aluno Ctrl+Play</a>.
     </div>
-  </footer>
+  </footer> -->
   <script src="JavaScript\script.js"></script>
 </body>
 
